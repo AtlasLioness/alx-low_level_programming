@@ -4,7 +4,7 @@
  * main -Entry point
  *
  * Return string using puts function
- * @parameter: string is a quote text
+ * @parameter: string
  *
  * Return: Always 0 (success)
  */
