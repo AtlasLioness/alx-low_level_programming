@@ -5,10 +5,10 @@
  *
  * Return: Always 0 (success)
  */
-int main (void)
+int main(void)
 {
 	int i;
-	int j = 0; 
+	int j = 0;
 
 	while (i < 1024)
 	{
