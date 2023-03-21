@@ -21,11 +21,12 @@ int _abs(int n)
  * print_last_digit - prints last digit of a number
  * @n: number which last digit is printed
  *
- * Return: last digit of n 
+ * Return: last digit of n
  */
 int print_last_digit(int n)
 {
 	int i;
+
 	i = _abs((n % 10));
 	_putchar(i + '0');
 	return (i);
