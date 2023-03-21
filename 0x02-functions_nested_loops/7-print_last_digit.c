@@ -1,32 +1,32 @@
 #include "main.h"
 /**
- * _abs - return absolute value of number
- * @n: number to test
+ * _abs - computes absolute value of a number
+ * @n: number to compute
  *
- * Return: n absolute value of number
+ * Return: absolute value n
  */
 int _abs(int n)
 {
-	if (n >= 0)
+	if (n < 0)
 	{
+		n = -1 * n;
 		return (n);
 	}
 	else
 	{
-		n = n * (-1);
 		return (n);
 	}
 }
-
 /**
  * print_last_digit - prints last digit of a number
- * @n : number
+ * @n: number which last digit is printed
  *
- * Return: last digit n
+ * Return: last digit of n 
  */
 int print_last_digit(int n)
 {
-	n = _abs(n) % 10;
-	_putchar(n + '0');
-	return (n);
+	int i;
+	i = _abs((n % 10));
+	_putchar(i + '0');
+	return (i);
 }
