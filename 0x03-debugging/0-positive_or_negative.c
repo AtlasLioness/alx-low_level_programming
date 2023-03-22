@@ -1,7 +1,5 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
-
+#include "main.h"
 /**
  * positive_or_negative - test if number is positive or negative
  * @i: number to test
