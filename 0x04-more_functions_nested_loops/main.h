@@ -19,3 +19,7 @@ void print_diagonal(int n);
 void print_square(int size);
 
 void print_triangle(int size);
+
+int PrimeFactor(long int prime);
+
+long int biggestFactor(long int number);
