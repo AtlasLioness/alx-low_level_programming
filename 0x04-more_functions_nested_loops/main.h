@@ -23,3 +23,5 @@ void print_triangle(int size);
 int PrimeFactor(long int prime);
 
 long int biggestFactor(long int number);
+
+void print_number(int n);
