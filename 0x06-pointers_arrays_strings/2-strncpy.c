@@ -23,14 +23,16 @@ char *_strncpy(char *dest, char *src, int n)
 	{
 		j++;
 	}
-	for (a = 0; a < j; a++)
+	if (i >= j)
 	{
-		dest[a] = src[a];
-	}
-	while (a < n)
-	{
-		dest[a] = '\0';
-		a++;
+		for (a = 0; a < j; a++)
+		{
+			dest[a] = src[a];
+		}
+		for (; a < n; a++)
+		{
+			dest[a] = '\0';
+		}
 	}
 	return (ptr);
 }
