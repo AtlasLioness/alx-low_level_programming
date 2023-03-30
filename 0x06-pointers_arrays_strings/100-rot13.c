@@ -18,11 +18,8 @@ char *rot13(char *src)
 				src[i] += 13;
 				break;
 			}
-			else
-			{
 				src[i] -= 13;
 				break;
-			}
 		}
 		i++;
 	}
