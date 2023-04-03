@@ -9,26 +9,22 @@
  */
 void print_diagsums(int *a, int size)
 {
-	int i, j, cells;
-	int sum = 0;
+	int i = 0, j, cells;
+	int sum1 = 0, sum2 = 0;
 
 	cells = size * size;
 
 	while (i < cells)
 	{
-		sum = sum + a[i];
+		sum1 = sum1 + a[i];
 		i += size + 1;
 	}
-	printf("%d, ", sum);
 
-	j = cells - size;
-	sum = 0;
-
-	while (j >= size - 1)
+	j = size - 1;
+	while (j < cells - 1)
 	{
-		sum = sum + a[j];
-		j = j - size + 1;
-
+		sum2 = sum2 + a[j];
+		j += size - 1;
 	}
-	printf("%d\n", sum);
+	printf("%d, %d\n", sum1, sum2);
 }
