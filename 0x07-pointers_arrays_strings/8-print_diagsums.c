@@ -9,25 +9,24 @@
  */
 void print_diagsums(int *a, int size)
 {
-	int i, j, pcells;
+	int i, j, cells;
 	int sum = 0;
-	int *p = a;
 
-	pcells = size * size;
+	cells = size * size;
 
-	while (i < pcells)
+	while (i < cells)
 	{
-		sum = sum + p[i];
+		sum = sum + a[i];
 		i += size + 1;
 	}
 	printf("%d, ", sum);
 
-	j = pcells - size;
+	j = cells - size;
 	sum = 0;
 
 	while (j >= size - 1)
 	{
-		sum = sum + p[j];
+		sum = sum + a[j];
 		j = j - size + 1;
 
 	}
