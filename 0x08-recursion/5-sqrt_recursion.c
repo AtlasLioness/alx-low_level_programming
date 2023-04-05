@@ -6,7 +6,6 @@
  * Return: natural square root of n or -1 if n doesn't have
  * a natural square root
  */
-int help_sqrt_rec(int n, int h);
 
 int _sqrt_recursion(int n)
 {
