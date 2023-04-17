@@ -8,11 +8,10 @@
  *
  * Return: pointer to the new struct dog
  */
+
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *new;
-	char *namemem;
-	char *ownermem;
 	int i, j, namelen = 0, ownerlen = 0;
 
 	if (name == NULL || age < 0 || owner == NULL)
@@ -37,14 +36,12 @@ dog_t *new_dog(char *name, float age, char *owner)
 		free(new);
 		return (NULL);
 	}
-	namemem = new->name;
-	ownermem = new->owner;
 	for (i = 0; i < namelen; i++)
-		namemem[i] = name[i];
-	namemem[i] = '\0';
+		new->name[i] = name[i];
+	new->name[i] = '\0';
 	for (j = 0; j < ownerlen; j++)
-		ownermem[j] = owner[j];
-	ownermem[j] = '\0';
+		new->owner[j] = owner[j];
+	new->owner[j] = '\0';
 
 	new->age = age;
 	return (new);
