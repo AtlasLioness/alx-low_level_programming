@@ -9,7 +9,21 @@
  */
 void init_dog(struct dog *d, char *name, float age, char *owner)
 {
+	_malloc(d);
 	d->name = name;
 	d->age = age;
 	d->owner = owner;
+}
+/**
+ * _malloc - allocates memory for a variable of type struct dog
+ * @d : pointer to variable
+ *
+ * Return: pointer to the struct dog variable
+ */
+struct dog *_malloc(struct dog *d)
+{
+	d = malloc(sizeof(struct dog));
+	if (d == NULL)
+		return (NULL);
+	return (d);
 }
