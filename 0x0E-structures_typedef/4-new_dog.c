@@ -39,10 +39,10 @@ dog_t *new_dog(char *name, float age, char *owner)
 	}
 	for (i = 0; i < namelen; i++)
 		namemem[i] = name[i];
-	namemem[i] = '\0';
+	namemem[namelen] = '\0';
 	for (i = 0; i < ownerlen; i++)
 		ownermem[i] = owner[i];
-	ownermem[i] = '\0';
+	ownermem[ownerlen] = '\0';
 
 	new->name = namemem;
 	new->age = age;
