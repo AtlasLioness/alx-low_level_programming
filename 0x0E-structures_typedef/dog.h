@@ -19,5 +19,6 @@ struct dog
 
 void init_dog(struct dog *d, char *name, float age, char *owner);
 struct dog *_malloc(struct dog *d);
+void print_dog(struct dog *d);
 
 #endif /* STRUCT_DOG */
