@@ -1,0 +1,6 @@
+#ifndef OBJECTLIKE_MACRO
+#define OBJECTLIKE_MACRO
+
+#define SIZE 1024
+
+#endif /* OBJECTLIKE_MACRO */
