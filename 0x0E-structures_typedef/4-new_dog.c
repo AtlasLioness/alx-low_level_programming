@@ -12,7 +12,7 @@
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *new;
-	int i, j, namelen = 0, ownerlen = 0;
+	int namelen = 0, ownerlen = 0;
 
 	if (name == NULL || age < 0 || owner == NULL)
 		return (NULL);
@@ -36,13 +36,25 @@ dog_t *new_dog(char *name, float age, char *owner)
 		free(new);
 		return (NULL);
 	}
-	for (i = 0; i < namelen; i++)
-		new->name[i] = name[i];
-	new->name[i] = '\0';
-	for (j = 0; j < ownerlen; j++)
-		new->owner[j] = owner[j];
-	new->owner[j] = '\0';
-
+	copy(new->name, namelen, name);
 	new->age = age;
+	copy(new->owner, ownerlen, name);
 	return (new);
+}
+/**
+ * copy - stores copy of a string
+ * @dest: pointer to result string
+ * @len: length of string
+ * @src: source string to copy from
+ *
+ * Return: pointer to where the copied string is stored
+ */
+char *copy(char *dest, int len, char *src)
+{
+	int i;
+
+	for (i = 0; i < len; i++)
+		dest[i] = src[i];
+	dest[i] = '\0';
+	return (dest);
 }
