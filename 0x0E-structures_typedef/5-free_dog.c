@@ -7,10 +7,7 @@
  */
 void free_dog(dog_t *d)
 {
-	char *name, *owner;
-	name = d->name;
-	owner = d->owner;
-	free(name);
-	free(owner);
+	free(d->name);
+	free(d->owner);
 	free(d);
 }
