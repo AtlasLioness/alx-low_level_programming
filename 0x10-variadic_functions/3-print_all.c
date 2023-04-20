@@ -15,35 +15,36 @@ void print_all(const char * const format, ...)
 	char *str;
 
 	va_start(print, format);
-	sep = ", ";
+	sep = "";
 
-	while (format[len] != '\0')
+	if (format)
 	{
-		if (len == 0)
-			sep = "";
-		switch (format[len])
+		while (format[len] != '\0')
 		{
-			case 'c':
-				printf("%s%c", sep, va_arg(print, int));
-				break;
-			case 'i':
-				printf("%s%d", sep, va_arg(print, int));
-				break;
-			case 'f':
-				printf("%s%f", sep, va_arg(print, double));
-				break;
-			case 's':
-				str = va_arg(print, char *);
-				if (str == NULL)
-					str = "(nil)";
-				printf("%s%s", sep, str);
-				break;
-			default:
-				len++;
-				continue;
+			switch (format[len])
+			{
+				case 'c':
+					printf("%s%c", sep, va_arg(print, int));
+					break;
+				case 'i':
+					printf("%s%d", sep, va_arg(print, int));
+					break;
+				case 'f':
+					printf("%s%f", sep, va_arg(print, double));
+					break;
+				case 's':
+					str = va_arg(print, char *);
+					if (str == NULL)
+						str = "(nil)";
+					printf("%s%s", sep, str);
+					break;
+				default:
+					len++;
+					continue;
+			}
+			sep = ", ";
+			len++;
 		}
-		sep = ", ";
-		len++;
 	}
 	va_end(print);
 	printf("\n");
