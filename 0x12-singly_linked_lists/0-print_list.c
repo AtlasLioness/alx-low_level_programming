@@ -12,6 +12,9 @@ size_t print_list(const list_t *h)
 	int counter = 1;
 	list_t print;
 
+	if(h == NULL)
+		return;
+
 	if (h->str == NULL)
 	{
 		print.str = "(nil)";
