@@ -9,7 +9,7 @@
 size_t print_listint(const listint_t *h)
 {
 	listint_t printer;
-	size_t counter = 1;
+	int counter = 1;
 
 
 	if (h == NULL)
