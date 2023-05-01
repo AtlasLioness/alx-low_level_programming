@@ -13,9 +13,9 @@ int pop_listint(listint_t **head)
 
 	if (head == NULL)
 		return (0);
-	tmp = *head;
-	*head = tmp->next;
-	i = tmp->n;
-	free(tmp);
+	tmp = (*head)->next;
+	i = (*head)->n;
+	free(*head);
+	*head = tmp;
 	return (i);
 }
