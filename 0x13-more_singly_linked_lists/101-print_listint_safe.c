@@ -14,11 +14,6 @@ size_t print_listint_safe(const listint_t *head)
 
 	if (head == NULL)
 		exit(98);
-	if (head->next == NULL)
-	{
-		printf("[%p] %d\n", (void *)head->next, head->n);
-		return (1);
-	}
 
 	now = (listint_t *)head;
 
