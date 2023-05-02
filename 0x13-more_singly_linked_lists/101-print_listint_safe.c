@@ -11,9 +11,6 @@ size_t print_listint_safe(const listint_t *head)
 	long int dist;
 	size_t counter = 0;
 
-	if (head == NULL)
-		exit(98);
-
 	while (head)
 	{
 		dist = head - head->next;
