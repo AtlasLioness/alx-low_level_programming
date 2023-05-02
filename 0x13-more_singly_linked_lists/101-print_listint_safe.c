@@ -10,7 +10,7 @@ size_t print_listint_safe(const listint_t *head)
 {
 	long int dist;
 	listint_t *now;
-	int counter = 0;
+	size_t counter = 0;
 
 	now = (listint_t *)head;
 
