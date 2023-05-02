@@ -8,15 +8,15 @@
  */
 size_t print_listint_safe(const listint_t *head)
 {
-	int dist;
+	long int dist;
 	listint_t *now;
 	int counter = 0;
 
 	now = (listint_t *)head;
 
-	while (now != NULL)
+	while (now)
 	{
-		dist = now - now->next;
+		dist = now - (now->next);
 		counter++;
 		printf("[%p] %d\n", (void *)now, now->n);
 		if (dist > 0)
