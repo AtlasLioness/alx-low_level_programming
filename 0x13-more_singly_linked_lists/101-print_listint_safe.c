@@ -9,21 +9,18 @@
 size_t print_listint_safe(const listint_t *head)
 {
 	long int dist;
-	listint_t *now;
 	size_t counter = 0;
 
-	now = (listint_t *)head;
-
-	while (now)
+	while (head)
 	{
-		dist = now - (now->next);
+		dist = head - (head->next);
 		counter++;
-		printf("[%p] %d\n", (void *)now, now->n);
+		printf("[%p] %d\n", (void *)head, head->n);
 		if (dist > 0)
-			now = now->next;
+			head = head->next;
 		else
 		{
-			printf("-> [%p] %d\n", (void *)now->next, now->next->n);
+			printf("-> [%p] %d\n", (void *)head->next, head->next->n);
 			break;
 		}
 	}
