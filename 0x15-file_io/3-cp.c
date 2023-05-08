@@ -25,7 +25,7 @@ int main(int argc, char **argv)
 	src = open(argv[1], O_RDONLY);
 	if (src < 0)
 		err_exit(98, "Error: Can't read from file %s\n", argv[1]);
-	dest = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
+	dest = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (dest < 0)
 		err_exit(99, "Error: Can't write to %s\n", argv[2]);
 
