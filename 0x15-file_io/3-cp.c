@@ -37,12 +37,12 @@ int main(int argc, char **argv)
 		err_exit(98, "Error: Can't read from file %s\n", argv[1]);
 	if (close(src) < 0)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d", src);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", src);
 		exit(100);
 	}
 	if (close(dest) < 0)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d", dest);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", dest);
 		exit(100);
 	}
 	return (0);
