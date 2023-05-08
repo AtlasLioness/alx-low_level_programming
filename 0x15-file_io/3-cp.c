@@ -13,7 +13,7 @@
  */
 int main(int argc, char **argv)
 {
-	int src, dest, re, wr;
+	int src, dest, wr, re = 1024;
 	char buffer[1024];
 
 	if (argc != 3)
@@ -26,15 +26,16 @@ int main(int argc, char **argv)
 	if (dest < 0)
 		err_exit(99, "Error: Can't write to %s\n", argv[2]);
 
-	while ((re = read(src, buffer, 1024)) > 0)
+	while (re == 1024)
 	{
+		re = read(src, buffer, 1024);
+
+		if (re < 0)
+			err_exit(98, "Error: Can't read from file %s\n", argv[1]);
 		wr = write(dest, buffer, re);
-		if (wr != re)
+		if (wr < 0)
 			err_exit(99, "Error: can't write to %s\n", argv[2]);
 	}
-
-	if (re < 0)
-		err_exit(98, "Error: Can't read from file %s\n", argv[1]);
 	if (close(src) < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", src);
