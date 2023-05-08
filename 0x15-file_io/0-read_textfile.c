@@ -33,14 +33,12 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	buffer[l] = '\0';
 
-	n = write(1, buffer, letters);
+	n = write(1, buffer, l);
 
 	close(fd);
 
-	if (n != letters || n < 0)
+	if (n != letters && n != 0)
 		return (0);
-	else if (n == 0)
-		return (l);
 	else
-		return (letters);
+		return (l);
 }
