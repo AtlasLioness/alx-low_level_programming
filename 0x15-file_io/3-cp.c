@@ -55,7 +55,7 @@ int main(int argc, char **argv)
  *
  */
 
-void err_exit(int code, char *erm, void *argument)
+void err_exit(int code, char *erm, char *argument)
 {
 	dprintf(STDERR_FILENO, erm, argument);
 	exit(code);
