@@ -17,7 +17,10 @@ int main(int argc, char **argv)
 	char buffer[1024];
 
 	if (argc != 3)
-		err_exit(97, "Usage: %s file_from file_to\n", *argv);
+	{
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
+		exit(97);
+	}
 
 	src = open(argv[1], O_RDONLY);
 	if (src < 0)
