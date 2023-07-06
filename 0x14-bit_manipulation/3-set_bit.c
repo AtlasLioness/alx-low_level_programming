@@ -9,7 +9,7 @@
  */
 int set_bit(unsigned long int *n, unsigned int index)
 {
-	int bitsize;
+	unsigned int bitsize;
 	int seth;
 
 	bitsize = sizeof(unsigned long int) * 8;
