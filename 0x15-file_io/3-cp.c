@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#define PERMS (S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH)
+
 /**
  * main - program that copies the content of a file to another file
  * @ac: number or arguments
@@ -24,7 +26,7 @@ int main(int ac, char **av)
 	if (file_from == -1)
 		errox(98, av[1]);
 
-	file_to = open(av[2], O_WRONLY | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
+	file_to = open(av[2], O_WRONLY | O_CREAT | O_TRUNC, PERMS);
 
 	if (file_to == -1)
 		errox(99, av[2]);
@@ -41,12 +43,12 @@ int main(int ac, char **av)
 	}
 	if (close(file_from) == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %d\n", file_from);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_from);
 		exit(100);
 	}
 	if (close(file_to) == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %d\n", file_to);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_to);
 		exit(100);
 	}
 	return (0);
